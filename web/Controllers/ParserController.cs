@@ -21,7 +21,7 @@ namespace web.Controllers
             this.retrieveFileForDownload = retrieveFileForDownload;
         }
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             var dto = retrieveAllFilesQuery.Fetch();
             return View(dto);
@@ -46,7 +46,7 @@ namespace web.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Download(long Id)
+        public FileResult Download(long Id)
         {
             var file = retrieveFileForDownload.Fetch(Id);
             return File(file.Data, "text/csv", file.FileName);
