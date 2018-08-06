@@ -1,0 +1,11 @@
+*.suo
+*.dotcover
+desktop.ini
+_ReSharper*
+obj/
+bin/
+*.user
+.DS_Store
+packages/
+.vs/
+/.idea/

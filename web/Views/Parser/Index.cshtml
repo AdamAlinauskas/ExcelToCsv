@@ -1,0 +1,33 @@
+﻿@model Dto.Parser.FilesForListingDto
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<H3>Files</H3>
+
+@Html.ActionLink("Upload and Parse Excel File", "ParseExcelFile")
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Download</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var file in Model.Files)
+    {
+        <tr>
+            <td>@file.Id</td>
+            <td>@file.Title</td>
+            <td>@file.Description</td>
+            <td>@Html.ActionLink("Download", "Download",new{file.Id})</td>
+        </tr>
+    }
+    </tbody>
+</table>
